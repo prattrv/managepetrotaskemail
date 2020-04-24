@@ -16,6 +16,10 @@ app.post("/email", (req, res) => {
   console.log("About to send email");
   console.log("Data", req.files);
   let transporter = nodemailer.createTransport({
+    host: "smtp.gmail.com",
+    port: 587,
+    secure: false,
+    requireTLS: true,
     service: process.env.SERVICE,
     auth: {
       user: process.env.EMAIL,
