@@ -25,7 +25,7 @@ app.post("/email", (req, res) => {
     auth: {
       type: "OAuth2",
       user: process.env.EMAIL,
-      pass: process.env.PWD,
+      //   pass: process.env.PWD,
       clientId: process.env.CLIENT_ID,
       clientSecret: process.env.CLIENT_SECRET,
       refreshToken: process.env.REFRESH_TOKEN,
