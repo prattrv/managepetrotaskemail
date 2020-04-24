@@ -12,7 +12,7 @@ app.get("/", (req, res) => {
 
 app.post("/email", (req, res) => {
   console.log("About to send email");
-  console.log("Data", req.files.customers);
+  console.log("Data", req.body.customers);
   let transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
     auth: {
