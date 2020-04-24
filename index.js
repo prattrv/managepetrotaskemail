@@ -1,10 +1,11 @@
 const express = require("express");
+const bodyParser = require("body-parser");
 const fileUpload = require("express-fileupload");
 const nodemailer = require("nodemailer");
 require("dotenv").config();
 const app = express();
 
-app.use(express.bodyParser());
+app.use(bodyParser());
 app.use(fileUpload());
 
 app.get("/", (req, res) => {
