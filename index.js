@@ -4,6 +4,7 @@ const nodemailer = require("nodemailer");
 require("dotenv").config();
 const app = express();
 
+app.use(express.bodyParser());
 app.use(fileUpload());
 
 app.get("/", (req, res) => {
