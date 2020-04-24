@@ -10,7 +10,7 @@ app.get("/", (req, res) => {
   res.send("Hello world");
 });
 
-app.get("/email", (req, res) => {
+app.post("/email", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
     auth: {
