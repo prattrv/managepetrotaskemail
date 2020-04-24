@@ -14,7 +14,7 @@ app.get("/", (req, res) => {
 
 app.post("/email", (req, res) => {
   console.log("About to send email");
-  console.log("Data", req.body);
+  console.log("Data", req.files);
   let transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
     auth: {
@@ -38,8 +38,9 @@ app.post("/email", (req, res) => {
 
   transporter.sendMail(mailOptions, (error, info) => {
     if (error) {
+      console.log(error);
       return res.status(400).json({
-        error: errorHandler.getErrorMessage(error),
+        error: "Can't send email",
       });
     }
 
