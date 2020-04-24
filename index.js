@@ -29,7 +29,11 @@ app.post("/email", (req, res) => {
 
   let mailOptions = {
     from: process.env.EMAIL,
-    to: ["prathameshrvaidya@gmail.com", "prath257@gmail.com"],
+    to: [
+      "prathameshrvaidya@gmail.com",
+      "prath257@gmail.com",
+      //   "Ali.tavana@gmail.com",
+    ],
     subject: "Database Backup",
     text: "Please find the attached CSV file",
     attachments: [
