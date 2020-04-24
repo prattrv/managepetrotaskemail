@@ -20,7 +20,7 @@ app.post("/email", (req, res) => {
     host: "smtp.gmail.com",
     port: 587,
     secure: false,
-    requireTLS: true,
+    // requireTLS: true,
     service: process.env.SERVICE,
     auth: {
       user: process.env.EMAIL,
