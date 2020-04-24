@@ -18,19 +18,23 @@ app.post("/email", (req, res) => {
   console.log("Email", process.env.EMAIL);
   let transporter = nodemailer.createTransport({
     host: "smtp.gmail.com",
-    port: 587,
-    secure: false,
+    port: 465,
+    secure: true,
     // requireTLS: true,
     service: process.env.SERVICE,
     auth: {
+      type: "OAuth2",
       user: process.env.EMAIL,
       pass: process.env.PWD,
+      clientId: process.env.CLIENT_ID,
+      clientSecret: process.env.CLIENT_SECRET,
+      refreshToken: process.env.REFRESH_TOKEN,
     },
   });
 
   let mailOptions = {
     from: process.env.EMAIL,
-    to: "prathameshrvaidya@gmail.com",
+    to: ["prathameshrvaidya@gmail.com", "prath257@gmail.com"],
     subject: "Database Backup",
     text: "Please find the attached CSV file",
     attachments: [
