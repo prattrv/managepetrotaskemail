@@ -6,6 +6,10 @@ const app = express();
 
 app.use(fileUpload());
 
+app.get("/", (req, res) => {
+  res.send("Hello world");
+});
+
 app.get("/email", (req, res) => {
   let transporter = nodemailer.createTransport({
     service: process.env.SERVICE,
